@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2EXRT0KVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J2EXRT0KVH');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Google Business Profile Audit | HORIZON LABS</title>
+    <meta name="description" content="Get a comprehensive audit of your Google Business Profile. Discover optimization opportunities and dominate local search.">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --neon-cyan: #00F0FF;
+            --neon-pink: #FF00FF;
+            --neon-green: #00FF88;
+            --neon-orange: #FFAA00;
+            --neon-red: #FF4444;
+            --deep-space: #000000;
+            --void-blue: #0a0118;
+        }
+        
+        body {
+            background: radial-gradient(circle, var(--void-blue), var(--deep-space));
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(0, 240, 255, 0.1);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 10px;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(255, 0, 255, 0.05));
+            border: 2px solid var(--neon-cyan);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 50px rgba(0, 240, 255, 0.2);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: var(--neon-cyan);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(0, 240, 255, 0.3);
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            font-family: 'Rajdhani', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .btn {
+            padding: 1.25rem 3rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 40px rgba(0, 240, 255, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--neon-cyan);
+            border: 2px solid var(--neon-cyan);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading */
+        .loading-section {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(0, 240, 255, 0.2);
+            border-top: 4px solid var(--neon-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 2rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+        }
+
+        .loading-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            max-width: 500px;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 2rem auto;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            border-radius: 8px;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        /* Results */
+        .results-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .results-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--neon-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .business-name {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+        }
+
+        .audit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .audit-card {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .audit-card:hover {
+            border-color: var(--neon-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.3);
+        }
+
+        .audit-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .audit-card-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--neon-cyan);
+        }
+
+        .health-indicator {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .health-indicator.excellent {
+            background: var(--neon-green);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-green);
+        }
+
+        .health-indicator.good {
+            background: var(--neon-orange);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-orange);
+        }
+
+        .health-indicator.poor {
+            background: var(--neon-red);
+            color: white;
+            box-shadow: 0 0 20px var(--neon-red);
+        }
+
+        .audit-details {
+            margin-top: 1rem;
+        }
+
+        .audit-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        .audit-item:last-child {
+            border-bottom: none;
+        }
+
+        .audit-label {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .audit-value {
+            color: var(--neon-cyan);
+            font-weight: 700;
+        }
+
+        .opportunities-section {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 3rem;
+            border: 2px solid rgba(255, 170, 0, 0.3);
+        }
+
+        .opportunities-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--neon-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .opportunity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(255, 170, 0, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--neon-orange);
+        }
+
+        .opportunity-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .opportunity-content h5 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--neon-orange);
+        }
+
+        .opportunity-content p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .audit-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="horizon-labs.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Labs
+        </a>
+
+        <div class="page-header">
+            <h1 class="page-title">📍 GOOGLE BUSINESS AUDIT</h1>
+            <p class="page-subtitle">Comprehensive audit of your local business presence</p>
+        </div>
+
+        <div class="card">
+            <!-- Input Section -->
+            <div id="auditInput">
+                <div class="input-group">
+                    <label>Business Name</label>
+                    <input type="text" class="input-field" id="businessName" placeholder="Your Business Name">
+                </div>
+                <div class="input-group">
+                    <label>Location / City</label>
+                    <input type="text" class="input-field" id="businessLocation" placeholder="Belfast, Northern Ireland">
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="runGoogleAudit()">
+                        GENERATE AUDIT REPORT →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Section -->
+            <div id="auditLoading" class="loading-section hidden">
+                <div class="loader"></div>
+                <h3 class="loading-title">ANALYZING YOUR PROFILE...</h3>
+                <p class="loading-text">Scanning Google Business Profile data</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="auditProgress" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="auditResults" class="hidden">
+                <div class="results-header">
+                    <h3>AUDIT REPORT</h3>
+                    <p class="business-name" id="auditedBusiness"></p>
+                </div>
+
+                <div class="audit-grid">
+                    <!-- Listing Accuracy -->
+                    <div class="audit-card">
+                        <div class="audit-card-header">
+                            <div class="audit-card-title">📝 Listing Accuracy</div>
+                            <div class="health-indicator" id="listingHealth">A</div>
+                        </div>
+                        <div class="audit-details">
+                            <div class="audit-item">
+                                <span class="audit-label">Business Name</span>
+                                <span class="audit-value" id="auditBusinessName">✓</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Address</span>
+                                <span class="audit-value" id="auditAddress">✓</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Phone Number</span>
+                                <span class="audit-value" id="auditPhone">✓</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Website</span>
+                                <span class="audit-value" id="auditWebsite">✓</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photos -->
+                    <div class="audit-card">
+                        <div class="audit-card-header">
+                            <div class="audit-card-title">📸 Photos</div>
+                            <div class="health-indicator" id="photosHealth">B</div>
+                        </div>
+                        <div class="audit-details">
+                            <div class="audit-item">
+                                <span class="audit-label">Total Photos</span>
+                                <span class="audit-value" id="photoCount">0</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Quality Score</span>
+                                <span class="audit-value" id="photoQuality">0/10</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Interior Photos</span>
+                                <span class="audit-value" id="interiorPhotos">Low</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Exterior Photos</span>
+                                <span class="audit-value" id="exteriorPhotos">Good</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div class="audit-card">
+                        <div class="audit-card-header">
+                            <div class="audit-card-title">⭐ Reviews</div>
+                            <div class="health-indicator" id="reviewsHealth">B</div>
+                        </div>
+                        <div class="audit-details">
+                            <div class="audit-item">
+                                <span class="audit-label">Average Rating</span>
+                                <span class="audit-value" id="avgRating">0.0/5</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Total Reviews</span>
+                                <span class="audit-value" id="reviewCount">0</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Recent Activity</span>
+                                <span class="audit-value" id="reviewFrequency">Monthly</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Response Rate</span>
+                                <span class="audit-value" id="responseRate">0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visibility -->
+                    <div class="audit-card">
+                        <div class="audit-card-header">
+                            <div class="audit-card-title">🎯 Visibility</div>
+                            <div class="health-indicator" id="visibilityHealth">C</div>
+                        </div>
+                        <div class="audit-details">
+                            <div class="audit-item">
+                                <span class="audit-label">Local Pack Chance</span>
+                                <span class="audit-value" id="localPackChance">0%</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Category Optimization</span>
+                                <span class="audit-value" id="categoryOpt">Partial</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Keyword Matches</span>
+                                <span class="audit-value" id="keywordMatches">0</span>
+                            </div>
+                            <div class="audit-item">
+                                <span class="audit-label">Posting Frequency</span>
+                                <span class="audit-value" id="postingFreq">Low</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="opportunities-section">
+                    <h4 class="opportunities-title">🚀 GROWTH OPPORTUNITIES</h4>
+                    <div id="opportunitiesList"></div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="contact.html" class="btn btn-primary">FIX MY GOOGLE PROFILE</a>
+                    <a href="contact.html" class="btn btn-primary">BOOK CONSULTATION</a>
+                    <button class="btn btn-secondary" onclick="resetAudit()">AUDIT ANOTHER BUSINESS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function runGoogleAudit() {
+            const businessName = document.getElementById('businessName').value.trim();
+            const location = document.getElementById('businessLocation').value.trim();
+            
+            if (!businessName || !location) {
+                alert('Please enter business name and location');
+                return;
+            }
+            
+            document.getElementById('auditInput').classList.add('hidden');
+            document.getElementById('auditLoading').classList.remove('hidden');
+            
+            let progress = 0;
+            const progressBar = document.getElementById('auditProgress');
+            const interval = setInterval(() => {
+                progress += Math.random() * 12;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    setTimeout(showAuditResults, 500);
+                }
+                progressBar.style.width = progress + '%';
+            }, 350);
+        }
+
+        function showAuditResults() {
+            const businessName = document.getElementById('businessName').value;
+            const location = document.getElementById('businessLocation').value;
+            document.getElementById('auditedBusiness').textContent = `${businessName} - ${location}`;
+            
+            // Generate realistic audit data
+            const photoCount = Math.floor(Math.random() * 40) + 15;
+            const photoQuality = Math.floor(Math.random() * 4) + 6;
+            const avgRating = (Math.random() * 1.5 + 3.5).toFixed(1);
+            const reviewCount = Math.floor(Math.random() * 150) + 20;
+            const responseRate = Math.floor(Math.random() * 60) + 30;
+            const localPackChance = Math.floor(Math.random() * 50) + 30;
+            const keywordMatches = Math.floor(Math.random() * 8) + 3;
+            
+            // Update listing accuracy
+            document.getElementById('auditBusinessName').textContent = '✓ Complete';
+            document.getElementById('auditAddress').textContent = Math.random() > 0.3 ? '✓ Complete' : '⚠️ Update';
+            document.getElementById('auditPhone').textContent = '✓ Complete';
+            document.getElementById('auditWebsite').textContent = Math.random() > 0.5 ? '✓ Active' : '⚠️ Missing';
+            
+            // Update photos
+            document.getElementById('photoCount').textContent = photoCount;
+            document.getElementById('photoQuality').textContent = `${photoQuality}/10`;
+            document.getElementById('interiorPhotos').textContent = photoCount > 30 ? 'Good' : 'Low';
+            document.getElementById('exteriorPhotos').textContent = 'Good';
+            
+            // Update reviews
+            document.getElementById('avgRating').textContent = `${avgRating}/5`;
+            document.getElementById('reviewCount').textContent = reviewCount;
+            document.getElementById('reviewFrequency').textContent = reviewCount > 100 ? 'Weekly' : 'Monthly';
+            document.getElementById('responseRate').textContent = `${responseRate}%`;
+            
+            // Update visibility
+            document.getElementById('localPackChance').textContent = `${localPackChance}%`;
+            document.getElementById('categoryOpt').textContent = localPackChance > 50 ? 'Good' : 'Partial';
+            document.getElementById('keywordMatches').textContent = keywordMatches;
+            document.getElementById('postingFreq').textContent = Math.random() > 0.5 ? 'Monthly' : 'Low';
+            
+            // Set health indicators
+            setHealthIndicator('listingHealth', 85);
+            setHealthIndicator('photosHealth', photoCount > 30 ? 85 : 65);
+            setHealthIndicator('reviewsHealth', parseFloat(avgRating) > 4 ? 85 : 70);
+            setHealthIndicator('visibilityHealth', localPackChance > 50 ? 75 : 55);
+            
+            // Generate opportunities
+            const opportunities = generateOpportunities(photoCount, parseFloat(avgRating), reviewCount, localPackChance);
+            const opportunitiesList = document.getElementById('opportunitiesList');
+            opportunitiesList.innerHTML = '';
+            
+            opportunities.forEach(opp => {
+                const div = document.createElement('div');
+                div.className = 'opportunity-item';
+                div.innerHTML = `
+                    <div class="opportunity-icon">${opp.icon}</div>
+                    <div class="opportunity-content">
+                        <h5>${opp.title}</h5>
+                        <p>${opp.description}</p>
+                    </div>
+                `;
+                opportunitiesList.appendChild(div);
+            });
+            
+            document.getElementById('auditLoading').classList.add('hidden');
+            document.getElementById('auditResults').classList.remove('hidden');
+        }
+
+        function setHealthIndicator(elementId, score) {
+            const element = document.getElementById(elementId);
+            if (score >= 80) {
+                element.textContent = 'A';
+                element.className = 'health-indicator excellent';
+            } else if (score >= 60) {
+                element.textContent = 'B';
+                element.className = 'health-indicator good';
+            } else {
+                element.textContent = 'C';
+                element.className = 'health-indicator poor';
+            }
+        }
+
+        function generateOpportunities(photos, rating, reviews, visibility) {
+            const opportunities = [];
+            
+            if (photos < 30) {
+                opportunities.push({
+                    icon: '📸',
+                    title: 'Add More Photos',
+                    description: 'Businesses with 30+ photos get 42% more requests for directions and 35% more clicks to their website'
+                });
+            }
+            
+            if (photos < 40) {
+                opportunities.push({
+                    icon: '🏢',
+                    title: 'Upload Interior Photos',
+                    description: 'Show customers what to expect inside. Interior photos increase engagement by 28%'
+                });
+            }
+            
+            if (rating < 4.5) {
+                opportunities.push({
+                    icon: '⭐',
+                    title: 'Request More Reviews',
+                    description: 'Your rating could improve with more recent reviews. Target 5-10 reviews per month'
+                });
+            }
+            
+            if (reviews < 100) {
+                opportunities.push({
+                    icon: '💬',
+                    title: 'Respond to All Reviews',
+                    description: 'Businesses that respond to reviews get 30% more customer engagement'
+                });
+            }
+            
+            if (visibility < 60) {
+                opportunities.push({
+                    icon: '📝',
+                    title: 'Post Weekly Updates',
+                    description: 'Regular Google Posts increase visibility by up to 45% in local search results'
+                });
+            }
+            
+            opportunities.push({
+                icon: '🎯',
+                title: 'Add Secondary Categories',
+                description: 'Additional relevant categories help you appear in more search results'
+            });
+            
+            opportunities.push({
+                icon: '⏰',
+                title: 'Verify Business Hours',
+                description: 'Keep hours updated, especially for holidays. 30% of customers check hours before visiting'
+            });
+            
+            // Return 4-5 opportunities
+            return opportunities.slice(0, Math.floor(Math.random() * 2) + 4);
+        }
+
+        function resetAudit() {
+            document.getElementById('businessName').value = '';
+            document.getElementById('businessLocation').value = '';
+            document.getElementById('auditResults').classList.add('hidden');
+            document.getElementById('auditInput').classList.remove('hidden');
+            document.getElementById('auditProgress').style.width = '0%';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

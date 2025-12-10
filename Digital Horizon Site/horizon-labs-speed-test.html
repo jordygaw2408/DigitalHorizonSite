@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Speed Analyzer | Horizon Labs</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --neon-cyan: #00f0ff;
+            --neon-purple: #9d00ff;
+            --neon-pink: #ff00ff;
+            --neon-green: #00ff41;
+            --neon-orange: #ff9500;
+            --neon-red: #ff0055;
+            --dark-bg: #0a0a0f;
+            --card-bg: rgba(15, 15, 30, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a0f2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(157, 0, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.75rem;
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 2px solid rgba(0, 240, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--neon-cyan);
+            font-size: 1.1rem;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 1.25rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(0, 240, 255, 0.3);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1.25rem 2.5rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            color: #ffffff;
+            box-shadow: 0 5px 25px rgba(0, 240, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.6);
+        }
+
+        .loading-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(0, 240, 255, 0.2);
+            border-top-color: var(--neon-cyan);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--neon-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .loading-text {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            max-width: 400px;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .results-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--neon-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .tested-url {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .score-card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .score-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .score-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            margin: 1rem 0;
+        }
+
+        .score-value.good { color: var(--neon-green); }
+        .score-value.warning { color: var(--neon-orange); }
+        .score-value.poor { color: var(--neon-red); }
+
+        .score-max {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .insights-section {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 3rem;
+            border: 2px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .insights-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1.5rem;
+        }
+
+        .insight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(0, 240, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--neon-cyan);
+        }
+
+        .insight-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .insight-content h5 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--neon-cyan);
+        }
+
+        .insight-content p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .score-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .score-value {
+                font-size: 2.5rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="horizon-labs.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Labs
+        </a>
+
+        <div class="page-header">
+            <h1 class="page-title">⚡ WEBSITE SPEED ANALYZER</h1>
+            <p class="page-subtitle">Analyze any website's performance in seconds</p>
+        </div>
+
+        <div class="card">
+            <!-- Input Section -->
+            <div id="speedTestInput">
+                <div class="input-group">
+                    <label>Enter Website URL</label>
+                    <input type="url" class="input-field" id="speedTestUrl" placeholder="https://yourwebsite.com">
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="runSpeedTest()">
+                        ANALYZE PERFORMANCE →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Section -->
+            <div id="speedTestLoading" class="loading-section hidden">
+                <div class="loader"></div>
+                <h3 class="loading-title">SCANNING WEBSITE...</h3>
+                <p class="loading-text">Analyzing performance metrics</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="speedTestProgress" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="speedTestResults" class="hidden">
+                <div class="results-header">
+                    <h3>PERFORMANCE REPORT</h3>
+                    <p class="tested-url" id="testedUrl"></p>
+                </div>
+
+                <div class="score-grid">
+                    <div class="score-card">
+                        <div class="score-label">Overall Performance</div>
+                        <div class="score-value" id="overallScore">0</div>
+                        <div class="score-max">out of 100</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-label">Speed Index</div>
+                        <div class="score-value" id="speedIndex">0</div>
+                        <div class="score-max">out of 100</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-label">Image Optimization</div>
+                        <div class="score-value" id="imageScore">0</div>
+                        <div class="score-max">out of 100</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-label">Script Efficiency</div>
+                        <div class="score-value" id="scriptScore">0</div>
+                        <div class="score-max">out of 100</div>
+                    </div>
+                </div>
+
+                <div class="insights-section">
+                    <h4 class="insights-title">📊 KEY INSIGHTS & RECOMMENDATIONS</h4>
+                    <div id="insightsList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function runSpeedTest() {
+            const urlInput = document.getElementById('speedTestUrl');
+            const url = urlInput.value.trim();
+
+            // Validate URL
+            if (!url) {
+                alert('Please enter a website URL');
+                return;
+            }
+
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                alert('Please enter a valid URL starting with http:// or https://');
+                return;
+            }
+
+            // Hide input, show loading
+            document.getElementById('speedTestInput').classList.add('hidden');
+            document.getElementById('speedTestLoading').classList.remove('hidden');
+            document.getElementById('speedTestResults').classList.add('hidden');
+
+            // Simulate progress
+            let progress = 0;
+            const progressBar = document.getElementById('speedTestProgress');
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 100) progress = 100;
+                progressBar.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                }
+            }, 200);
+
+            // Simulate speed test (in real implementation, you'd call an actual API)
+            setTimeout(() => {
+                clearInterval(progressInterval);
+                progressBar.style.width = '100%';
+                
+                setTimeout(() => {
+                    displayResults(url);
+                }, 500);
+            }, 3000);
+        }
+
+        function displayResults(url) {
+            // Hide loading, show results
+            document.getElementById('speedTestLoading').classList.add('hidden');
+            document.getElementById('speedTestResults').classList.remove('hidden');
+
+            // Set tested URL
+            document.getElementById('testedUrl').textContent = url;
+
+            // Generate simulated scores (in real implementation, use actual API data)
+            const scores = {
+                overall: Math.floor(Math.random() * 40) + 40, // 40-80
+                speed: Math.floor(Math.random() * 40) + 45,
+                image: Math.floor(Math.random() * 40) + 35,
+                script: Math.floor(Math.random() * 40) + 50
+            };
+
+            // Display scores with animations
+            animateScore('overallScore', scores.overall);
+            animateScore('speedIndex', scores.speed);
+            animateScore('imageScore', scores.image);
+            animateScore('scriptScore', scores.script);
+
+            // Generate insights based on scores
+            generateInsights(scores);
+        }
+
+        function animateScore(elementId, targetScore) {
+            const element = document.getElementById(elementId);
+            let currentScore = 0;
+            const increment = targetScore / 50;
+
+            // Determine color class
+            let colorClass = 'good';
+            if (targetScore < 50) colorClass = 'poor';
+            else if (targetScore < 75) colorClass = 'warning';
+
+            const interval = setInterval(() => {
+                currentScore += increment;
+                if (currentScore >= targetScore) {
+                    currentScore = targetScore;
+                    clearInterval(interval);
+                }
+                element.textContent = Math.floor(currentScore);
+                element.className = 'score-value ' + colorClass;
+            }, 20);
+        }
+
+        function generateInsights(scores) {
+            const insightsList = document.getElementById('insightsList');
+            const insights = [];
+
+            if (scores.overall < 70) {
+                insights.push({
+                    icon: '⚠️',
+                    title: 'Performance Needs Improvement',
+                    text: 'Your website is loading slower than 75% of websites. This can significantly impact user experience and conversions.'
+                });
+            }
+
+            if (scores.image < 60) {
+                insights.push({
+                    icon: '🖼️',
+                    title: 'Image Optimization Critical',
+                    text: 'Large, unoptimized images are slowing down your site. Converting to modern formats like WebP and implementing lazy loading could improve load times by 40-60%.'
+                });
+            }
+
+            if (scores.speed < 65) {
+                insights.push({
+                    icon: '🚀',
+                    title: 'Speed Index Below Average',
+                    text: 'Your pages take too long to become visually complete. Optimizing critical rendering path and reducing render-blocking resources could help.'
+                });
+            }
+
+            if (scores.script < 70) {
+                insights.push({
+                    icon: '⚙️',
+                    title: 'JavaScript Optimization Needed',
+                    text: 'Heavy JavaScript execution is delaying page interactivity. Consider code splitting, minification, and removing unused libraries.'
+                });
+            }
+
+            // Always add a positive insight
+            insights.push({
+                icon: '💡',
+                title: 'Quick Win Opportunities',
+                text: 'Implementing browser caching, enabling compression, and optimizing your hosting can provide immediate performance gains of 20-30%.'
+            });
+
+            // Render insights
+            insightsList.innerHTML = insights.map(insight => `
+                <div class="insight-item">
+                    <div class="insight-icon">${insight.icon}</div>
+                    <div class="insight-content">
+                        <h5>${insight.title}</h5>
+                        <p>${insight.text}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2EXRT0KVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2EXRT0KVH');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>HORIZON LABS | Coming Soon</title>
+    <meta name="description" content="Horizon Labs — A new era of digital innovation is coming soon.">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            background:#000;
+            font-family:'Rajdhani',sans-serif;
+            color:white;
+            overflow:hidden;
+        }
+
+        :root{
+            --neon-cyan:#00F0FF;
+            --neon-pink:#FF00FF;
+            --neon-purple:#9D00FF;
+            --deep-space:#000000;
+            --void-blue:#0a0118;
+        }
+
+        /* =============================
+           LOADING SCREEN
+        ============================== */
+        #loading-sequence{
+            position:fixed;
+            top:0;left:0;
+            width:100%;height:100%;
+            background:var(--deep-space);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            z-index:9999;
+            transition:opacity 1s ease;
+        }
+        #loading-sequence.hide{opacity:0;pointer-events:none;}
+
+        .loading-logo{
+            font-family:'Orbitron',sans-serif;
+            font-size:4rem;
+            font-weight:900;
+            background:linear-gradient(90deg,var(--neon-cyan),var(--neon-pink));
+            background-size:200% 100%;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            animation:glow 3s infinite, gradientShift 3s infinite;
+        }
+
+        @keyframes gradientShift{
+            0%{background-position:0%;}
+            50%{background-position:100%;}
+            100%{background-position:0%;}
+        }
+
+        @keyframes glow{
+            0%{text-shadow:0 0 20px var(--neon-cyan);}
+            50%{text-shadow:0 0 40px var(--neon-pink);}
+            100%{text-shadow:0 0 20px var(--neon-cyan);}
+        }
+
+        .loading-bar-container{
+            width:350px;height:4px;
+            background:rgba(255,255,255,0.1);
+            margin-top:2rem;
+            overflow:hidden;
+            border-radius:2px;
+        }
+        .loading-bar{
+            width:0%;height:100%;
+            background:linear-gradient(90deg,var(--neon-cyan),var(--neon-pink));
+            animation:loading 3s forwards;
+        }
+        @keyframes loading{
+            to{width:100%;}
+        }
+
+        .loading-text{
+            margin-top:1.5rem;
+            font-family:'Share Tech Mono',monospace;
+            font-size:.9rem;
+            letter-spacing:4px;
+            color:var(--neon-cyan);
+            animation:blink 1.2s infinite;
+        }
+        @keyframes blink{
+            0%,100%{opacity:1;}
+            50%{opacity:.3;}
+        }
+
+        /* =============================
+           COMING SOON SCREEN
+        ============================== */
+        .coming-soon-wrapper{
+            position:absolute;
+            top:0;left:0;
+            width:100%;height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:2rem;
+            background:radial-gradient(circle,var(--void-blue),var(--deep-space));
+            overflow:hidden;
+        }
+
+        .coming-soon-title{
+            font-family:'Orbitron',sans-serif;
+            font-size:4rem;
+            font-weight:900;
+            background:linear-gradient(90deg,var(--neon-cyan),var(--neon-pink),var(--neon-purple));
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            animation:gradientShift 5s infinite;
+            letter-spacing:6px;
+        }
+
+        .coming-soon-subtitle{
+            margin-top:1rem;
+            font-family:'Share Tech Mono',monospace;
+            font-size:1.2rem;
+            color:var(--neon-cyan);
+            letter-spacing:3px;
+            opacity:.8;
+        }
+
+        .notify-btn{
+            margin-top:2.5rem;
+            padding:1rem 2.5rem;
+            font-family:'Orbitron',sans-serif;
+            background:transparent;
+            border:2px solid var(--neon-cyan);
+            color:var(--neon-cyan);
+            border-radius:10px;
+            font-size:1.1rem;
+            cursor:pointer;
+            transition:.3s;
+        }
+        .notify-btn:hover{
+            background:var(--neon-cyan);
+            color:#000;
+            box-shadow:0 0 20px var(--neon-pink);
+        }
+
+        /* floating neon particles */
+        .particle{
+            position:absolute;
+            width:8px;height:8px;
+            background:var(--neon-cyan);
+            border-radius:50%;
+            opacity:.4;
+            animation:float 7s infinite linear;
+        }
+        @keyframes float{
+            from{transform:translateY(110vh);}
+            to{transform:translateY(-10vh);}
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOADING -->
+    <div id="loading-sequence">
+        <div class="loading-logo">HORIZON LABS</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        <div class="loading-text">INITIALIZING SYSTEM...</div>
+    </div>
+
+    <!-- COMING SOON CONTENT -->
+    <div class="coming-soon-wrapper">
+        <h1 class="coming-soon-title">COMING SOON</h1>
+        <p class="coming-soon-subtitle">A new era of digital innovation is loading...</p>
+
+        <a href="index.html">
+            <button class="notify-btn">Return to Home</button>
+        </a>
+    </div>
+
+    <script>
+        // Hide loading screen
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.getElementById("loading-sequence").classList.add("hide");
+            }, 3500);
+        });
+
+        // Random floating particles
+        function createParticle(){
+            const p=document.createElement("div");
+            p.classList.add("particle");
+            p.style.left=Math.random()*100+"%";
+            p.style.animationDuration=(6+Math.random()*4)+"s";
+            document.body.appendChild(p);
+
+            setTimeout(()=>p.remove(),10000);
+        }
+        setInterval(createParticle,300);
+    </script>
+
+</body>
+</html>

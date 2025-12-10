@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2EXRT0KVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J2EXRT0KVH');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>HORIZON LABS | Interactive Experience Center</title>
+    <meta name="description" content="Experience Digital Horizon's services hands-on. Try our interactive tools - no registration required.">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --neon-cyan: #00F0FF;
+            --neon-pink: #FF00FF;
+            --neon-blue: #0066FF;
+            --neon-purple: #9D00FF;
+            --neon-green: #00FF88;
+            --deep-space: #000000;
+            --void-blue: #0a0118;
+        }
+        
+        body {
+            background: var(--deep-space);
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* =============================
+           LOADING SCREEN
+        ============================== */
+        #loading-sequence {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-space);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
+        
+        #loading-sequence.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s infinite, gradientShift 3s infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0%; }
+            50% { background-position: 100%; }
+            100% { background-position: 0%; }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px var(--neon-cyan); }
+            50% { text-shadow: 0 0 40px var(--neon-pink); }
+            100% { text-shadow: 0 0 20px var(--neon-cyan); }
+        }
+
+        .loading-bar-container {
+            width: 350px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+        
+        .loading-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            animation: loading 3s forwards;
+        }
+        
+        @keyframes loading {
+            to { width: 100%; }
+        }
+
+        .loading-text {
+            margin-top: 1.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .9rem;
+            letter-spacing: 4px;
+            color: var(--neon-cyan);
+            animation: blink 1.2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .3; }
+        }
+
+        /* =============================
+           MAIN CONTENT
+        ============================== */
+        .main-wrapper {
+            min-height: 100vh;
+            background: radial-gradient(circle, var(--void-blue), var(--deep-space));
+            position: relative;
+            padding: 4rem 2rem;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            margin-bottom: 5rem;
+            padding-top: 2rem;
+        }
+
+        .main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 5s infinite;
+            letter-spacing: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            color: var(--neon-cyan);
+            letter-spacing: 3px;
+            opacity: .8;
+            margin-bottom: 2rem;
+        }
+
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        /* Tools Grid */
+        .tools-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            padding: 2rem 0;
+        }
+
+        .tool-card {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(255, 0, 255, 0.05));
+            border: 2px solid var(--neon-cyan);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .tool-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .tool-card:hover {
+            border-color: var(--neon-pink);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(255, 0, 255, 0.4);
+        }
+
+        .tool-icon {
+            font-size: 4rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .tool-card:hover .tool-icon {
+            color: var(--neon-pink);
+            animation: iconSpin 0.6s ease;
+        }
+
+        @keyframes iconSpin {
+            from { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            to { transform: rotate(360deg) scale(1); }
+        }
+
+        .tool-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tool-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .tool-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .tool-features li {
+            padding: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        .tool-features li::before {
+            content: '▸ ';
+            color: var(--neon-cyan);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .tool-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-family: 'Orbitron', sans-serif;
+            background: transparent;
+            border: 2px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .tool-btn:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 30px var(--neon-cyan);
+            transform: scale(1.05);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 6rem;
+            padding: 4rem 2rem;
+        }
+
+        .cta-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--neon-pink);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .cta-text {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            border: none;
+            color: #000;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 50px rgba(255, 0, 255, 0.6);
+        }
+
+        /* Floating Particles */
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--neon-cyan);
+            border-radius: 50%;
+            opacity: .4;
+            animation: float 7s infinite linear;
+        }
+        
+        @keyframes float {
+            from { transform: translateY(110vh); }
+            to { transform: translateY(-10vh); }
+        }
+
+        /* Back Link */
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(0, 240, 255, 0.1);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 10px;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 3rem;
+                letter-spacing: 3px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .tools-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1rem;
+            }
+
+            .tool-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .tool-icon {
+                font-size: 3rem;
+            }
+
+            .tool-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .back-link {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-sequence">
+        <div class="loading-logo">HORIZON LABS</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        <div class="loading-text">INITIALIZING EXPERIENCE CENTER...</div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-wrapper">
+        <!-- Back to Home Link -->
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Digital Horizon
+        </a>
+
+        <!-- Header Section -->
+        <div class="header-section">
+            <h1 class="main-title">HORIZON LABS</h1>
+            <p class="subtitle">INTERACTIVE EXPERIENCE CENTER</p>
+            <p class="intro-text">
+                Don't just read about what we do—experience it. Try our interactive tools hands-on, 
+                explore working demos, and see exactly how our solutions can transform your business. 
+                No registration, no commitment, just pure innovation.
+            </p>
+        </div>
+
+        <!-- Tools Grid -->
+        <div class="tools-container">
+            <!-- Tool 1: Booking System -->
+            <div class="tool-card" onclick="window.location.href='horizon-labs-booking.html'">
+                <i class="fas fa-calendar-check tool-icon"></i>
+                <h3 class="tool-title">Booking System Demo</h3>
+                <p class="tool-description">
+                    Experience a fully functional booking flow. Choose services, select dates, pick time slots, 
+                    and complete a booking—just like your customers would.
+                </p>
+                <ul class="tool-features">
+                    <li>Interactive calendar with real-time availability</li>
+                    <li>Dynamic time slot selection</li>
+                    <li>5-step booking flow</li>
+                    <li>Instant confirmation screen</li>
+                </ul>
+                <a href="horizon-labs-booking.html" class="tool-btn">Try Booking System →</a>
+            </div>
+
+            <!-- Tool 2: Speed Test -->
+            <div class="tool-card" onclick="window.location.href='horizon-labs-speed-test.html'">
+                <i class="fas fa-bolt tool-icon"></i>
+                <h3 class="tool-title">Website Speed Analyzer</h3>
+                <p class="tool-description">
+                    Enter any website URL and get an instant performance analysis. See detailed metrics, 
+                    actionable insights, and optimization recommendations.
+                </p>
+                <ul class="tool-features">
+                    <li>5 key performance metrics</li>
+                    <li>Color-coded scoring system</li>
+                    <li>Personalized optimization tips</li>
+                    <li>Professional reporting interface</li>
+                </ul>
+                <a href="horizon-labs-speed-test.html" class="tool-btn">Analyze a Website →</a>
+            </div>
+
+            <!-- Tool 3: Google Audit -->
+            <div class="tool-card" onclick="window.location.href='horizon-labs-google-audit.html'">
+                <i class="fas fa-map-marker-alt tool-icon"></i>
+                <h3 class="tool-title">Google Business Audit</h3>
+                <p class="tool-description">
+                    Get a comprehensive audit of your Google Business Profile. Discover optimization opportunities 
+                    and learn how to dominate local search results.
+                </p>
+                <ul class="tool-features">
+                    <li>4 category health scores</li>
+                    <li>Detailed visibility analysis</li>
+                    <li>Actionable growth opportunities</li>
+                    <li>Professional audit dashboard</li>
+                </ul>
+                <a href="horizon-labs-google-audit.html" class="tool-btn">Run an Audit →</a>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Build Something Real?</h2>
+            <p class="cta-text">
+                These demos show what's possible. Let's create something even better for your business.
+            </p>
+            <a href="contact.html" class="cta-btn">LET'S TALK</a>
+        </div>
+    </div>
+
+    <script>
+        // Hide loading screen
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.getElementById("loading-sequence").classList.add("hide");
+            }, 3500);
+        });
+
+        // Random floating particles
+        function createParticle() {
+            const p = document.createElement("div");
+            p.classList.add("particle");
+            p.style.left = Math.random() * 100 + "%";
+            p.style.animationDuration = (6 + Math.random() * 4) + "s";
+            document.querySelector('.main-wrapper').appendChild(p);
+            setTimeout(() => p.remove(), 10000);
+        }
+        setInterval(createParticle, 300);
+    </script>
+
+</body>
+</html>
