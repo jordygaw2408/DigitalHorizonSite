@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://digital-horizon.co.uk/sitemap.xml
