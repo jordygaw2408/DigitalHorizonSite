@@ -19,18 +19,13 @@
     <meta name="keywords" content="Web design portfolio, Case studies UK, Digital agency work, Web design examples, Brand design portfolio">
     
     <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="favicon-v2.ico">
+    <link rel="icon" type="image/x-icon" href="favicon-v2.ico">
 
-<link rel="manifest" href="assets/icons/site.webmanifest">
-    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,33 +43,23 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-             <a class="navbar-brand" href="index.html">
-                <svg class="dh-horizon-logo" width="34" height="34" viewBox="0 0 64 64" fill="none"
+            <a class="navbar-brand" href="index.html">
+                <svg class="dh-horizon-logo logo-animated" width="34" height="34" viewBox="0 0 64 64" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <!-- Outer Glow -->
                     <circle cx="32" cy="32" r="30" fill="url(#gradGlow)" opacity="0.25"/>
-
-                    <!-- Horizon Arc -->
                     <path d="M12 38C16 28 24 22 32 22C40 22 48 28 52 38" 
                         stroke="url(#gradMain)" 
                         stroke-width="5"
-                        stroke-linecap="round"
-                        />
-
-                    <!-- Ground Line -->
+                        stroke-linecap="round"/>
                     <line x1="10" y1="42" x2="54" y2="42" 
                         stroke="url(#gradMain)" 
                         stroke-width="4"
                         stroke-linecap="round"/>
-
                     <defs>
-                        <!-- Main Gradient -->
                         <linearGradient id="gradMain" x1="0" y1="0" x2="64" y2="64">
                             <stop offset="0%" stop-color="#00D4FF"/>
                             <stop offset="100%" stop-color="#0066FF"/>
                         </linearGradient>
-
-                        <!-- Glow Gradient -->
                         <radialGradient id="gradGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
                             gradientTransform="translate(32 32) scale(30)">
                             <stop stop-color="#00D4FF"/>
@@ -82,27 +67,34 @@
                         </radialGradient>
                     </defs>
                 </svg>
-
                 <span class="brand-text">Digital Horizon</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-             <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link active" href="work.html" aria-current="page">Work</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="services-web-design.html">Web Design & Development</a></li>
+                            <li><a class="dropdown-item" href="services-local-lead-machine.html">Local Lead Machine</a></li>
+                            <li><a class="dropdown-item" href="services-business-automation.html">Business Automation</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
-                    
                     <li class="nav-item">
                         <a class="nav-link" href="insights.html">Insights</a>
                     </li>
@@ -114,457 +106,144 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section-premium inner-page-hero">
+<!-- Hero Section -->
+<section class="hero-section-premium inner-page-hero">
+    <div class="gradient-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                <span class="hero-badge-premium">
+                    <i class="fas fa-briefcase"></i>
+                    Our Portfolio
+                </span>
+                <h1 class="hero-heading-premium">
+                    Work That 
+                    <span class="gradient-text-premium">Speaks for Itself</span>
+                </h1>
+                <p class="hero-subheading-premium centered">
+                    Explore how we've helped businesses across Northern Ireland achieve digital transformation and measurable growth.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Portfolio Showcase Section -->
+    <section class="section-padding">
         <div class="gradient-orbs">
-            <div class="orb orb-1"></div>
             <div class="orb orb-2"></div>
             <div class="orb orb-3"></div>
         </div>
 
         <div class="container">
-            <div class="row align-items-center min-vh-75">
-                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                    <h1 class="hero-heading-premium">
-                        Work That 
-                        <span class="gradient-text-premium">Speaks for Itself</span>
-                    </h1>
-                    <p class="hero-subheading-premium centered">
-                        Explore how we've helped businesses across the UK achieve digital transformation and measurable growth.
-                    </p>
+            
+            <!-- Case Study 1: Colin Graham Music -->
+            <div class="case-study-showcase" data-aos="fade-up">
+                <div class="mockup-container">
+                    <div class="desktop-mockup">
+                        <div class="mac-frame">
+                            <div class="mac-screen">
+                                <img src="assets/images/ColinDesktop.webp" alt="Colin Graham Music desktop view">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <img src="assets/images/ColinMobile.webp" alt="Colin Graham Music mobile view">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Colin Graham Music</h3>
+                    <p>A complete digital hub for Northern Ireland's rising country music star with 115,000+ monthly Spotify listeners. Streamlined tour dates, integrated ticket sales, and professional showcase.</p>
+                    <div class="project-tags">
+                        <span class="project-tag"><i class="fas fa-music"></i> Music & Entertainment</span>
+                        <span class="project-tag"><i class="fas fa-laptop-code"></i> Web Design</span>
+                        <span class="project-tag"><i class="fas fa-ticket-alt"></i> Booking Integration</span>
+                    </div>
+                    <a href="https://colingrahammusic.com" target="_blank" rel="noopener noreferrer" class="project-cta">
+                        <span>View Website</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Case Study 1: Colin Graham Music -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                    <span class="section-badge-premium">Music & Entertainment</span>
-                    <h2 class="section-heading-premium">Colin Graham Music</h2>
-                    <p class="section-subheading-premium">
-                        A complete digital presence for Northern Ireland's rising country music star
-                    </p>
-                </div>
-            </div>
-            
-            <div class="row mb-5" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-12">
-                    <!-- <div class="case-study-hero-image">
-                        <img src="assets/images/colin-graham-hero.jpg" alt="Colin Graham Music Website" class="img-fluid rounded">
-                    </div> -->
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <h3>The Challenge</h3>
-                        <p>Colin Graham, a rapidly growing Northern Irish country singer with 115,000+ monthly Spotify listeners and 10 million streams, needed a central hub for his online presence. Fans struggled to find tour dates scattered across multiple ticketing platforms (Ticketmaster, Shine, Eventbrite), and Colin lacked a professional platform to showcase his music, story, and upcoming shows.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Our Solution</h3>
-                        <p>We created a comprehensive music website that serves as Colin's digital home. The site features a prominent tour dates page consolidating all ticket links in one place, embedded Spotify players and YouTube videos, Colin's compelling personal story, and a professional contact system. The design balances his country music aesthetic with modern functionality, ensuring fans can easily discover his music and buy tickets.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>Key Deliverables</h3>
-                        <ul class="deliverables-list">
-                            <li>Complete website design & development</li>
-                            <li>Centralized tour dates with multi-platform ticket links</li>
-                            <li>Integrated Spotify & YouTube embeds</li>
-                            <li>Biography page with personal storytelling</li>
-                            <li>Mobile-optimized music player & video gallery</li>
-                            <li>GDPR-compliant analytics & cookie consent</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-10 mx-auto" data-aos="fade-up">
-                    <div class="outcomes-section">
-                        <h3 class="text-center mb-5">The Results</h3>
-                        <div class="row g-4">
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">10+</div>
-                                    <div class="stat-label">Tour dates centralized in one location</div>
-                                </div>
+            <!-- Case Study 2: The Painters Mate -->
+            <!-- <div class="case-study-showcase" data-aos="fade-up" data-aos-delay="100">
+                <div class="mockup-container">
+                    <div class="desktop-mockup">
+                        <div class="mac-frame">
+                            <div class="mac-screen">
+                                <img src="assets/images/KyloDesktop.jpg" alt="The Painters Mate desktop view">
                             </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">3x</div>
-                                    <div class="stat-label">Platforms consolidated (Ticketmaster, Shine, Eventbrite)</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">115K+</div>
-                                    <div class="stat-label">Monthly Spotify listeners gaining access</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">100%</div>
-                                    <div class="stat-label">Mobile-optimized fan experience</div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="mobile-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <img src="assets/images/KyloMobile.jpg" alt="The Painters Mate mobile view">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                    <div class="testimonial-box">
-                        <i class="fas fa-quote-left quote-icon-large"></i>
-                        <p class="testimonial-text-large">"Digital Horizon created the perfect platform for my music. Now fans can find everything in one place - tour dates, music, and my story. It's exactly what I needed."</p>
-                        <div class="testimonial-author-large">
-                            <strong>Colin Graham</strong> - Singer-Songwriter
-                        </div>
-                    </div>
+            <div class="project-info">
+                <h3>Kylo Designs</h3>
+                <p>A high-end interior design showroom in Whiteabbey, Northern Ireland. We delivered a conversion-focused e-commerce platform designed to attract new customers and generate consistent local enquiries.</p>
+                <div class="project-tags">
+                    <span class="project-tag"><i class="fas fa-paint-roller"></i> Interior Design</span>
+                    <span class="project-tag"><i class="fas fa-search"></i> Local SEO</span>
+                    <span class="project-tag"><i class="fas fa-chart-line"></i> E-commerce</span>
                 </div>
-            </div>
-        </div>
-    </section>
+                <a href="https://www.kylodesign.co.uk" class="project-cta" aria-disabled="true" title="Website link coming soon" onclick="return false;">
+                    <span>View Website</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div> -->
 
-    <!-- Case Study 2: The Painters Mate -->
-    <section class="section-padding bg-light">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                    <span class="section-badge-premium">Home Services</span>
-                    <h2 class="section-heading-premium">The Painters Mate</h2>
-                    <p class="section-subheading-premium">
-                        Building an online presence from scratch for a professional painting business
-                    </p>
-                </div>
-            </div>
-            
-            <div class="row mb-5" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-12">
-                    <!-- <div class="case-study-hero-image">
-                        <img src="https://via.placeholder.com/1200x600/0D7FFF/ffffff?text=The+Painters+Mate+Website" alt="The Painters Mate Website" class="img-fluid rounded">
-                    </div> -->
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <h3>The Challenge</h3>
-                        <p>The Painters Mate, a professional painting and decorating business in Antrim, had no online presence whatsoever. They were relying entirely on word-of-mouth and local advertising, missing out on a growing market of customers who search online for local tradespeople.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Our Solution</h3>
-                        <p>We built their first-ever website from the ground up, creating a professional online presence that showcases their expertise and craftsmanship. The site features a compelling portfolio gallery, clear service descriptions, and an easy quote request system optimized for mobile users.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>Key Deliverables</h3>
-                        <ul class="deliverables-list">
-                            <li>Complete website design & development</li>
-                            <li>Before/after project gallery</li>
-                            <li>Mobile-optimized quote request forms</li>
-                            <li>Local SEO optimization for Antrim area</li>
-                            <li>Professional brand identity</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-10 mx-auto" data-aos="fade-up">
-                    <div class="outcomes-section">
-                        <h3 class="text-center mb-5">The Results</h3>
-                        <div class="row g-4">
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">35+</div>
-                                    <div class="stat-label">New enquiries in first month</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">First</div>
-                                    <div class="stat-label">Page Google ranking achieved</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">78%</div>
-                                    <div class="stat-label">Of enquiries via mobile devices</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">100%</div>
-                                    <div class="stat-label">Increase in online visibility</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                    <div class="testimonial-box">
-                        <i class="fas fa-quote-left quote-icon-large"></i>
-                        <p class="testimonial-text-large">"Really pleased with how the website turned out! Would highly recommend the guys"</p>
-                        <div class="testimonial-author-large">
-                            <strong>The Painters Mate</strong>  Owner, The Painters Mate
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Case Study 2: EC Aesthetics -->
-    <section class="section-padding bg-light">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                    <span class="section-badge-premium">Healthcare & Beauty</span>
-                    <h2 class="section-heading-premium">EC Aesthetics</h2>
-                    <p class="section-subheading-premium">
-                        Streamlining bookings and enhancing customer experience with automation
-                    </p>
-                </div>
-            </div>
-            
-            <div class="row mb-5" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-12">
-                    <!-- <div class="case-study-hero-image">
-                        <img src="https://via.placeholder.com/1200x600/FF6B6B/ffffff?text=EC+Aesthetics+Website" alt="EC Aesthetics Website" class="img-fluid rounded">
-                    </div> -->
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <h3>The Challenge</h3>
-                        <p>EC Aesthetics, a growing aesthetics practice in Northern Ireland, was struggling with managing client bookings through phone calls and direct messages. The manual process was time-consuming and often led to double bookings or missed appointments.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Our Solution</h3>
-                        <p>We created a professional website with an integrated booking system that allows clients to view real-time availability and book their preferred services. The automated system eliminates scheduling conflicts and sends instant confirmations.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>Key Deliverables</h3>
-                        <ul class="deliverables-list">
-                            <li>Responsive website design & development</li>
-                            <li>Real-time booking system integration</li>
-                            <li>Automated email confirmations</li>
-                            <li>Service showcase with pricing</li>
-                            <li>Calendar synchronization</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-10 mx-auto" data-aos="fade-up">
-                    <div class="outcomes-section">
-                        <h3 class="text-center mb-5">The Results</h3>
-                        <div class="row g-4">
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">80%</div>
-                                    <div class="stat-label">Time saved on admin tasks</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">24/7</div>
-                                    <div class="stat-label">Booking availability</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">Zero</div>
-                                    <div class="stat-label">Double bookings</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">65%</div>
-                                    <div class="stat-label">Bookings outside business hours</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                    <div class="testimonial-box">
-                        <i class="fas fa-quote-left quote-icon-large"></i>
-                        <p class="testimonial-text-large">"Digital Horizon completely transformed how we manage appointments. The booking system has saved us countless hours of back-and-forth communication, and our clients love being able to book their treatments online at any time."</p>
-                        <div class="testimonial-author-large">
-                            <strong>EC Aesthetics</strong>  Owner & Practitioner
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Case Study 3: NC Consulting -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                    <span class="section-badge-premium">Professional Services</span>
-                    <h2 class="section-heading-premium">NC Consulting</h2>
-                    <p class="section-subheading-premium">
-                        Establishing professional credibility through digital infrastructure
-                    </p>
-                </div>
-            </div>
-            
-            <div class="row mb-5" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-12">
-                    <!-- <div class="case-study-hero-image">
-                        <img src="https://via.placeholder.com/1200x600/4ECDC4/ffffff?text=NC+Consulting+Website" alt="NC Consulting Website" class="img-fluid rounded">
-                    </div> -->
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <h3>The Challenge</h3>
-                        <p>NC Consulting, a QHSE (Quality, Health, Safety, and Environment) consulting firm, needed to establish a professional digital presence to compete for corporate contracts. Using personal email addresses and lacking a professional website was impacting their credibility with potential clients.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Our Solution</h3>
-                        <p>We established a complete professional digital infrastructure: a custom domain, Office 365 business email system, and a polished website that positions NC Consulting as an established industry expert. The solution provides both credibility and practical business tools.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card-premium">
-                        <div class="service-icon-premium">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>Key Deliverables</h3>
-                        <ul class="deliverables-list">
-                            <li>Custom domain registration & setup</li>
-                            <li>Office 365 business email configuration</li>
-                            <li>Professional website design & development</li>
-                            <li>Services & expertise showcase</li>
-                            <li>Client portal access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-10 mx-auto" data-aos="fade-up">
-                    <div class="outcomes-section">
-                        <h3 class="text-center mb-5">The Results</h3>
-                        <div class="row g-4">
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">100%</div>
-                                    <div class="stat-label">Professional email infrastructure</div>
-                                </div>
+            <!-- Case Study 3: EC Aesthetics -->
+            <!-- <div class="case-study-showcase" data-aos="fade-up" data-aos-delay="200">
+                <div class="mockup-container">
+                    <div class="desktop-mockup">
+                        <div class="mac-frame">
+                            <div class="mac-screen">
+                                <img src="https://placehold.co/1200x750/0A1628/9F7AEA?text=EC+Aesthetics+Website" alt="Francey Media - Coming soon">
                             </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">3x</div>
-                                    <div class="stat-label">Increase in corporate enquiries</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">First</div>
-                                    <div class="stat-label">Impression credibility boost</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="outcome-stat">
-                                    <div class="stat-number">Complete</div>
-                                    <div class="stat-label">Business operations setup</div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="mobile-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <img src="https://placehold.co/390x844/0A1628/9F7AEA?text=Mobile+View" alt="Francey Media - Coming soon">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                    <div class="testimonial-box">
-                        <i class="fas fa-quote-left quote-icon-large"></i>
-                        <p class="testimonial-text-large">"Having professional email addresses and a proper website has completely changed how potential clients perceive our business. We're now competing for contracts we wouldn't have been considered for before. Digital Horizon understood exactly what we needed."</p>
-                        <div class="testimonial-author-large">
-                            <strong>NC Consulting</strong> â€ Managing Director
-                        </div>
+                <div class="project-info">
+                    <h3>Francey Media</h3>
+                    <p>Photography and Videography showcase website.</p>
+                    <div class="project-tags">
+                        <span class="project-tag"><i class="fas fa-spa"></i> Showcase</span>
+                        <span class="project-tag"><i class="fas fa-calendar-check"></i>Photography</span>
+                        <span class="project-tag"><i class="fas fa-clock"></i>Videography</span>
                     </div>
+                    <a href="#" class="project-cta" aria-disabled="true" title="Website link coming soon" onclick="return false;">
+                        <span>View Website</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
+    
 
     <!-- CTA Section -->
     <section class="cta-section-premium">
@@ -579,13 +258,16 @@
                             <span>Let's Talk About Your Project</span>
                             <i class="fas fa-rocket"></i>
                         </a>
+                        <a href="services.html" class="btn-premium btn-outline-premium">
+                            <span>View Our Services</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <!-- Footer -->
     <footer class="footer-premium">
         <div class="container">
@@ -595,14 +277,13 @@
                         <h3>Digital Horizon</h3>
                         <p>Strategic web design and digital solutions for ambitious UK businesses.</p>
                         <div class="social-links-premium">
-                            <a href="https://www.facebook.com/digitalhorizonuk/" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-facebook-f"></i>
+                            <a href="https://www.facebook.com/digitalhorizonuk/" aria-label="Digital Horizon on Facebook" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
                             </a>
-                            <a href="https://www.linkedin.com/company/digital-horizon-uk/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-linkedin-in"></i>
+                            <a href="https://www.linkedin.com/company/digital-horizon-uk/?viewAsMember=true" aria-label="Digital Horizon on LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                             </a>
                         </div>
-
                     </div>
                 </div>
                 
@@ -632,11 +313,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading-premium">Get In Touch</h5>
                     <ul class="footer-contact-premium">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                           <a href="mailto:hello@digital-horizon.co.uk">hello@digital-horizon.co.uk</a>
-
-                        </li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:jordan.gaw@digital-horizon.co.uk">jordan.gaw@digital-horizon.co.uk</a></li>
                         <li>
                             <i class="fas fa-phone"></i>
                             <a href="tel:+447543129891">+44 7543 129891</a>
@@ -652,7 +329,7 @@
             <div class="footer-bottom-premium">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; 2024 Digital Horizon Web Design. All rights reserved.</p>
+                        <p>&copy; 2026 Digital Horizon Web Design. All rights reserved.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
                         <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a>
@@ -661,19 +338,9 @@
             </div>
         </div>
     </footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- AOS Animation JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-    <!-- Custom JS -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -28,9 +28,6 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,8 +82,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="work.html">Work</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="services-web-design.html">Web Design & Development</a></li>
+                            <li><a class="dropdown-item" href="services-local-lead-machine.html">Local Lead Machine</a></li>
+                            <li><a class="dropdown-item" href="services-business-automation.html">Business Automation</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -204,7 +210,7 @@
                             <span>Start Your Project</span>
                             <i class="fas fa-rocket"></i>
                         </a>
-                        <a href="services.html" class="btn-premium btn-outline-light-premium btn-lg">
+                        <a href="services.html" class="btn-premium btn-outline-premium">
                             <span>View Our Services</span>
                             <i class="fas fa-briefcase"></i>
                         </a>
@@ -275,11 +281,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading-premium">Get In Touch</h5>
                     <ul class="footer-contact-premium">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                           <a href="mailto:hello@digital-horizon.co.uk">hello@digital-horizon.co.uk</a>
-
-                        </li>
+                       <li><i class="fas fa-envelope"></i><a href="mailto:jordan.gaw@digital-horizon.co.uk">jordan.gaw@digital-horizon.co.uk</a></li>
                         <li>
                             <i class="fas fa-phone"></i>
                             <a href="tel:+447543129891">+44 7543 129891</a>
@@ -295,7 +297,7 @@
             <div class="footer-bottom-premium">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; 2024 Digital Horizon Web Design. All rights reserved.</p>
+                        <p>&copy; 2026 Digital Horizon Web Design. All rights reserved.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
                         <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a>
@@ -307,9 +309,6 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

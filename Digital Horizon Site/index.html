@@ -30,11 +30,21 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <link rel="icon" href="favicon-v2.ico">
     
+    <!-- Resource Hints for Performance Optimization -->
+    <!-- Preload critical images from work page -->
+    <link rel="preload" href="assets/images/ColinDesktop.webp" as="image" type="image/webp">
+    <link rel="preload" href="assets/images/ColinMobile.webp" as="image" type="image/webp">
+    
+    <!-- Prefetch commonly visited pages for instant navigation -->
+    <link rel="prefetch" href="work.html">
+    <link rel="prefetch" href="services.html">
+    <link rel="prefetch" href="contact.html">
+    
+    <!-- DNS Prefetch for external domains -->
+    <link rel="dns-prefetch" href="https://open.spotify.com">
+    <link rel="dns-prefetch" href="https://colingrahammusic.com">
 
 
     <!-- Google Fonts -->
@@ -132,8 +142,17 @@
                      <li class="nav-item">
                         <a class="nav-link" href="work.html">Work</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="services-web-design.html">Web Design & Development</a></li>
+                            <li><a class="dropdown-item" href="services-local-lead-machine.html">Local Lead Machine</a></li>
+                            <li><a class="dropdown-item" href="services-business-automation.html">Business Automation</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -164,14 +183,17 @@
                 <!-- LEFT: TEXT CONTENT -->
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="hero-badge-premium">
-                        <i class="fas fa-bolt"></i>
+                        <i class="fa fa-bolt"></i>
                         <span>DIGITAL DESIGN & WEB DEVELOPMENT</span>
                     </div>
 
                     <h1 class="hero-heading-premium">
                         We Build 
                         <span class="gradient-text-premium">High-Impact</span><br>
-                        Websites That <span id="typedText" class="typed-text-premium"></span>
+                        Websites That <span class="typed-slot">
+  <span id="typedText" class="typed-text-premium"></span>
+</span>
+
                     </h1>
 
                     <p class="hero-subheading-premium">
@@ -214,16 +236,16 @@
                         
                         <!-- Floating Service Icons -->
                         <div class="floating-icon-3d" style="top: 10%; left: -10%;">
-                            <i class="fas fa-rocket"></i>
+                            <i class="fa-solid fa-rocket"></i>
                         </div>
                         <div class="floating-icon-3d" style="top: 15%; right: -5%;">
-                            <i class="fas fa-code"></i>
+                            <i class="fa-solid fa-code"></i>
                         </div>
                         <div class="floating-icon-3d" style="bottom: 25%; left: -5%;">
-                            <i class="fas fa-mobile-alt"></i>
+                            <i class="fa-solid fa-mobile-screen-button"></i>
                         </div>
-                        <div class="floating-icon-3d" style="bottom: 20%; right: -10%;">
-                            <i class="fas fa-chart-line"></i>
+                        <div class="floating-icon-3d" style="bottom: 20%; right: -2%;">
+                            <i class="fa-solid fa-chart-line"></i>
                         </div>
                     </div>
                 </div>
@@ -232,185 +254,129 @@
         </div>
     </section>
 
+    <!-- What We Do - 3 Core Services Overview -->
+    <section class="services-overview-section section-light-premium">
+        <div class="gradient-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
 
-    <!-- Services Section -->
-    <section class="services-section-premium section-padding">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                    <span class="section-badge-premium">WHAT WE DO</span>
-                    <h2 class="section-heading-premium">Services That Drive Results</h2>
-                    <p class="section-subheading-premium">We combine strategy, design, and technology to create digital experiences that convert visitors into customers.</p>
+                    <span class="section-badge-premium">What We Do</span>
+                    <h2 class="section-heading-premium">
+                        Three Ways We 
+                        <span class="gradient-text-premium">Transform Your Business</span>
+                    </h2>
+                    <p class="section-subheading-premium">
+                        Choose the solution that fits your needs, or combine them for maximum impact.
+                    </p>
                 </div>
             </div>
-            
+
             <div class="row g-4">
-                <!-- Service Card 1 -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="service-card-premium">
-                        <div class="card-glow-premium"></div>
-                        <div class="service-icon-premium">
+                <!-- Web Design - Most Popular -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-tile">
+                        <!-- <div class="service-tile-header">
+                            <span class="popular-badge">Most Popular</span>
+                        </div> -->
+                        <div class="service-tile-icon">
                             <i class="fas fa-laptop-code"></i>
                         </div>
                         <h3>Web Design & Development</h3>
-                        <p>Beautiful, responsive websites that work perfectly on every device and convert visitors into customers.</p>
-                        <a href="services.html" class="service-link-premium" aria-label="Learn more about Web Design & Development">
-                            Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        <p>Premium websites that convert visitors into customers. Beautiful design meets strategic thinking.</p>
+                        <a href="services-web-design.html" class="btn-premium btn-outline-light-premium">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
                         </a>
-                        <div class="card-stats-premium">
-                            <span><i class="fas fa-clock"></i> 2 Weeks</span>
-                            <span><i class="fas fa-pound-sign"></i> Starting at &pound;495</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Service Card 2 -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="service-card-premium">
-                        <div class="card-glow-premium"></div>
-                        <div class="service-icon-premium">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h3>E-Commerce Solutions</h3>
-                        <p>Powerful online stores that make it easy for customers to buy and increase your revenue.</p>
-                        <a href="services.html" class="service-link-premium" aria-label="Learn more about E-Commerce Solutions">
-                            Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                        <div class="card-stats-premium">
-                            <span><i class="fas fa-clock"></i> 6 - 8 Weeks</span>
-                            <span><i class="fas fa-pound-sign"></i> Starting at &pound;1495</span>
-                        </div>
-                    </div>
-                </div>
-                
-
-                <!-- Service Card 3 -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-card-premium">
-                        <div class="card-glow-premium"></div>
-                        <div class="service-icon-premium">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <h3>Booking Systems</h3>
-                        <p>Automated booking and scheduling systems that save time, increase bookings by up to 35% and stop double bookings.</p>
-                        <a href="services.html" class="service-link-premium" aria-label="Learn more about Booking Systems">
-                            Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                        <div class="card-stats-premium">
-                            <span><i class="fas fa-clock"></i> 4 - 6 Weeks</span>
-                            <span><i class="fas fa-pound-sign"></i> Starting at &pound;750</span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Service Card 4 -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="service-card-premium">
-                        <div class="card-glow-premium"></div>
-                        <div class="service-icon-premium">
-                            <i class="fas fa-search"></i>
+                <!-- Local Lead Machine -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-tile">
+                        <div class="service-tile-icon">
+                            <i class="fas fa-search-location"></i>
                         </div>
-                        <h3>SEO & Google Business</h3>
-                        <p>Get found by your ideal customers with strategic SEO and get your business ranking higher in Google searches.</p>
-                        <a href="services.html" class="service-link-premium" aria-label="Learn more about SEO & Google Business">
-                            Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        <h3>Local Lead Machine</h3>
+                        <p>Dominate your local market with Google Business Profile optimization that brings customers to your door.</p>
+                        <a href="services-local-lead-machine.html" class="btn-premium btn-outline-light-premium">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
                         </a>
-                        <div class="card-stats-premium">
-                            <span><i class="fas fa-clock"></i> 2 Weeks </span>
-                             <span><i class="fas fa-pound-sign"></i> Starting at &pound;245</span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Service Card 5 -->
-                 <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-card-premium">
-                        <div class="card-glow-premium"></div>
-                        <div class="service-icon-premium">
-                            <i class="fas fa-palette"></i>
+                <!-- Business Automation -->
+                <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-tile">
+                        <div class="service-tile-icon">
+                            <i class="fas fa-cogs"></i>
                         </div>
-                        <h3>Brand Identity Design</h3>
-                        <p>Create a memorable brand that resonates with your audience and stands out from the competition whether it is a simple logo or a full social media post layout.</p>
-                        <a href="services.html" class="service-link-premium" aria-label="Learn more about Brand Identity Design">
-                            Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        <h3>Business Automation</h3>
+                        <p>Save time and capture more leads with automated booking systems and CRM that works for you 24/7.</p>
+                        <a href="services-business-automation.html" class="btn-premium btn-outline-light-premium">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
                         </a>
-                        <div class="card-stats-premium">
-                            <span><i class="fas fa-clock"></i> 2 - 4 Weeks</span>
-                             <span><i class="fas fa-pound-sign"></i> Starting at &pound;245</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="service-card-premium">
-                        <div class="card-glow-premium"></div>
-                        <div class="service-icon-premium">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Website Hosting & Care</h3>
-                        <p>Secure, fast hosting with regular updates, backups, and 24/7 monitoring for peace of mind for your site.</p>
-                        <a href="services.html" class="service-link-premium" aria-label="Learn more about Website Hosting & Care">
-                            Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                        <div class="card-stats-premium">
-                            <span><i class="fas fa-clock"></i> Monthly</span>
-                            <span><i class="fas fa-pound-sign"></i> Starting at &pound;30/mo</span>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Project Showcase: Colin Graham Music -->
-    <section class="section-padding" style="background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);">
+    <!-- Project Showcase: Colin Graham Music (Mac mockup mirrored from Work page) -->
+    <section class="section-padding section-soft section-divider-top">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <div class="project-showcase-image">
-                        <img src="assets/images/colin-graham-homepage.png" alt="Colin Graham Music Website Homepage" class="img-fluid rounded shadow-lg" style="width: 100%; height: auto; border: 1px solid #e5e7eb;">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <span class="section-badge-premium">RECENT PROJECT</span>
+                    <h2 class="section-heading-premium">
+                        Colin Graham Music
+                        <span class="gradient-text-premium">Website</span>
+                    </h2>
+                    <p class="section-subheading-premium">A complete digital hub for Northern Ireland's rising country music star and built to drive discovery, ticket sales, and fan engagement.</p>
+                </div>
+            </div>
+
+            <div class="case-study-showcase" data-aos="fade-up">
+                <div class="mockup-container">
+                    <div class="desktop-mockup">
+                        <div class="mac-frame">
+                            <div class="mac-screen">
+                                <img src="assets/images/ColinDesktop.webp" alt="Colin Graham Music desktop view">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <img src="assets/images/ColinMobile.webp" alt="Colin Graham Music mobile view">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-6" data-aos="fade-left">
-                    <span class="section-badge-premium">RECENT PROJECT</span>
-                    <h2 class="section-heading-premium">Colin Graham Music</h2>
-                    <p class="section-subheading-premium" style="color: #666; margin-bottom: 2rem;">
-                        A sleek, professional website for award-winning country music artist Colin Graham, designed to showcase his music, tour dates, and connect with fans across the UK and Ireland.
-                    </p>
-                    
-                    <div class="project-features mb-4">
-                        <div class="feature-item mb-3" style="display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle me-2" style="color: #0D7FFF; margin-top: 3px;"></i>
-                            <span><strong>Tour Date Integration:</strong> Automatically consolidates tour dates from multiple sources for easy fan access</span>
-                        </div>
-                        <div class="feature-item mb-3" style="display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle me-2" style="color: #0D7FFF; margin-top: 3px;"></i>
-                            <span><strong>Music Showcase:</strong> Embedded Spotify player and streaming links for seamless music discovery</span>
-                        </div>
-                        <div class="feature-item mb-3" style="display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle me-2" style="color: #0D7FFF; margin-top: 3px;"></i>
-                            <span><strong>Mobile-First Design:</strong> Fully responsive layout optimized for fans on the go</span>
-                        </div>
-                        <div class="feature-item mb-3" style="display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle me-2" style="color: #0D7FFF; margin-top: 3px;"></i>
-                            <span><strong>Professional Branding:</strong> Clean, modern aesthetic that reflects Colin's country music style</span>
-                        </div>
-                    </div>
 
-                    <div class="hero-cta-group">
-                        <a href="https://colingrahammusic.com" target="_blank" rel="noopener noreferrer" class="btn-premium btn-primary-premium">
+                <div class="project-info">
+                    <h3>Colin Graham Music</h3>
+                    <p>A sleek, professional website designed to showcase music, consolidate tour dates, and make it effortless for fans to discover and buy tickets.</p>
+                    <div class="project-tags">
+                        <span class="project-tag"><i class="fas fa-calendar-alt"></i> Tour Dates</span>
+                        <span class="project-tag"><i class="fas fa-music"></i> Spotify Embed</span>
+                        <span class="project-tag"><i class="fas fa-mobile-alt"></i> Mobile-First</span>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center">
+                        <a href="https://colingrahammusic.com" target="_blank" rel="noopener noreferrer" class="project-cta">
                             <span>Visit Website</span>
                             <i class="fas fa-external-link-alt"></i>
                         </a>
-                        <a href="work.html" class="btn btn-outline-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; border-width: 2px; transition: all 0.3s ease;">
+                        <a href="work.html" class="project-cta secondary">
                             <span>View More Projects</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -484,7 +450,7 @@
                             <span>Start Your Project</span>
                             <i class="fas fa-rocket"></i>
                         </a>
-                        <a href="contact.html" class="btn-premium btn-outline-light-premium btn-lg">
+                        <a href="contact.html" class="btn-premium btn-outline-premium">
                             <span>Book a Discovery Call</span>
                             <i class="fas fa-phone"></i>
                         </a>
@@ -555,11 +521,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading-premium">Get In Touch</h5>
                     <ul class="footer-contact-premium">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                           <a href="mailto:hello@digital-horizon.co.uk">hello@digital-horizon.co.uk</a>
-
-                        </li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:jordan.gaw@digital-horizon.co.uk">jordan.gaw@digital-horizon.co.uk</a></li>
                         <li>
                             <i class="fas fa-phone"></i>
                             <a href="tel:+447543129891">+44 7543 129891</a>
@@ -575,7 +537,7 @@
             <div class="footer-bottom-premium">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; 2024 Digital Horizon Web Design. All rights reserved.</p>
+                        <p>&copy; 2026 Digital Horizon Web Design. All rights reserved.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
                         <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a>
@@ -585,13 +547,8 @@
         </div>
     </footer>
 
-    
-
     <!-- Scripts -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>

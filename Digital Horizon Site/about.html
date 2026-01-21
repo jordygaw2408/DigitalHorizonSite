@@ -7,272 +7,400 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-J2EXRT0KVH');
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>About Digital Horizon | Your Digital Growth Partners</title>
-    <meta name="description" content="Meet Digital Horizon Ã¢â‚¬â€ a design-led digital agency helping UK businesses grow through strategic web design, branding, and digital marketing.">
-
-    <!-- Bootstrap + Fonts + Icons -->
+    <meta name="description" content="Meet Digital Horizon - a design-led digital agency helping UK businesses grow through strategic web design, branding, and digital marketing.">
+    
+    <link rel="icon" type="image/x-icon" href="favicon-v2.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="icon" href="favicon-v2.ico">
-    <!-- Custom Premium CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- Navigation (unchanged) -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg class="dh-horizon-logo logo-animated" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="30" fill="url(#gradGlow)" opacity="0.25"/>
+                    <path d="M12 38C16 28 24 22 32 22C40 22 48 28 52 38" stroke="url(#gradMain)" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="10" y1="42" x2="54" y2="42" stroke="url(#gradMain)" stroke-width="4" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="gradMain" x1="0" y1="0" x2="64" y2="64">
+                            <stop offset="0%" stop-color="#00D4FF"/>
+                            <stop offset="100%" stop-color="#0066FF"/>
+                        </linearGradient>
+                        <radialGradient id="gradGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(32 32) scale(30)">
+                            <stop stop-color="#00D4FF"/>
+                            <stop offset="1" stop-color="#0066FF" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                </svg>
+                <span class="brand-text">Digital Horizon</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="work.html">Work</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="services-web-design.html">Web Design & Development</a></li>
+                            <li><a class="dropdown-item" href="services-local-lead-machine.html">Local Lead Machine</a></li>
+                            <li><a class="dropdown-item" href="services-business-automation.html">Business Automation</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insights.html">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-3" href="contact.html">Start Your Project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section-premium inner-page-hero">
+    <div class="gradient-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <svg class="dh-horizon-logo logo-animated" width="34" height="34" viewBox="0 0 64 64" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <circle class="logo-glow" cx="32" cy="32" r="30" fill="url(#gradGlow)" opacity="0.25"/>
-                <path class="logo-arc" d="M12 38C16 28 24 22 32 22C40 22 48 28 52 38" 
-                    stroke="url(#gradMain)" stroke-width="5" stroke-linecap="round"/>
-                <line class="logo-line" x1="10" y1="42" x2="54" y2="42" 
-                    stroke="url(#gradMain)" stroke-width="4" stroke-linecap="round"/>
-                <defs>
-                    <linearGradient id="gradMain" x1="0" y1="0" x2="64" y2="64">
-                        <stop offset="0%" stop-color="#00D4FF"/>
-                        <stop offset="100%" stop-color="#0066FF"/>
-                    </linearGradient>
-                    <radialGradient id="gradGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                        gradientTransform="translate(32 32) scale(30)">
-                        <stop stop-color="#00D4FF"/>
-                        <stop offset="1" stop-color="#0066FF" stop-opacity="0"/>
-                    </radialGradient>
-                </defs>
-            </svg>
-            <span class="brand-text">Digital Horizon</span>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
-                <li class="nav-item"><a class="btn btn-primary ms-lg-3" href="contact.html">Start Your Project</a></li>
-            </ul>
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                <span class="hero-badge-premium">
+                    <i class="fa fa-person"></i>
+                    About us
+                </span>
+                <h1 class="hero-heading-premium">
+                    Hi, We're 
+                    <span class="gradient-text-premium">Digital Horizon</span>
+                </h1>
+                <p class="hero-subheading-premium centered">
+                    A small team with big ambitions, helping local businesses in Northern Ireland build digital presences that actually work. No corporate fluff, just honest web design that drives results.
+                </p>
+            </div>
         </div>
     </div>
-</nav>
+</section>
+   
 
-
-
- <section class="hero-section-premium inner-page-hero">
-        <div class="gradient-orbs">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-        </div>
-
+    <!-- The Story Section -->
+    <!-- <section class="section-padding">
         <div class="container">
-            <div class="row align-items-center min-vh-75">
-                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                    <h1 class="hero-heading-premium">
-                        We're Digital Horizon  
-                        <span class="gradient-text-premium">Your Partner in Digital Growth</span>
-                    </h1>
-                    <p class="hero-subheading-premium centered">
-                        A UK-based design studio dedicated to creating websites and brands that don't just look good & they perform.
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="section-badge-premium">Our Story</span>
+                    <h2 class="section-heading-premium">Why We Started Digital Horizon</h2>
+                    <p class="lead">
+                        Let's be honest - most local businesses get a rough deal when it comes to websites. They're either stuck with expensive agencies who don't understand their market, or cheap templates that look identical to their competitors.
                     </p>
+                    <p>
+                        Digital Horizon was born from a simple frustration: watching brilliant local businesses struggle online while big agencies charge enterprise prices for cookie-cutter solutions. We knew there had to be a better way.
+                    </p>
+                    <p>
+                        Based in Randalstown, we understand the Northern Ireland business landscape. We know what works in Belfast, Antrim, and Ballymena because we're part of these communities. We're not just another faceless agency - we're your neighbours, and we genuinely care about seeing local businesses thrive.
+                    </p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-image-modern">
+                        <div class="image-wrapper">
+                            <img src="assets/images/sean-kuriyan-z0d5mXs-lI8-unsplash.jpg" alt="Digital Horizon workspace" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+     <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="founder-profile-card">
+                        <div class="founder-image-wrapper">
+                            <img src="assets/images/jordangaw.webp" alt="Jordan Gaw - Founder of Digital Horizon" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <span class="section-badge-premium">Meet the Founder</span>
+                    <h2 class="section-heading-premium">Jordan Gaw</h2>
+                    <p class="founder-title">Founder</p>
+                    
+                    <div class="founder-bio">
+                        <p class="lead">
+                            I started Digital Horizon because I got tired of seeing local businesses being underserved by the digital industry.
+                        </p>
+                        <p>
+                            After years working with agencies that treated websites like assembly-line products, I knew there was a better approach. One that puts the business owner first, speaks plain English, and focuses ruthlessly on what actually matters - getting you more customers.
+                        </p>
+                        <p>
+                            I'm not interested in winning design awards or impressing other designers. I care about one thing: does your website make your phone ring? Does it fill your calendar? Does it grow your business?
+                        </p>
+                        <p>
+                            When you work with Digital Horizon, you're working directly with me. No account managers, no middlemen - just straightforward communication and websites that work as hard as you do.
+                        </p>
+                        
+                        <div class="founder-stats mt-4">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number">8+</div>
+                                        <div class="stat-label">Years Experience</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number">30+</div>
+                                        <div class="stat-label">Projects Delivered</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number">100%</div>
+                                        <div class="stat-label">Client Satisfaction</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- =========================================
-     OUR STORY
-========================================= -->
-<section class="section-padding">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6" data-aos="fade-right">
-                <h2 class="section-heading-premium">Built on a Belief</h2>
-                <p class="section-subheading-premium">
-                    Digital Horizon was founded on a simple but powerful idea:  
-                    every business deserves a digital presence that truly represents what they do and why they matter.
-                </p>
-                <p>
-                    Too often, businesses settle for generic templates or flashy designs that miss the mark.  
-                    We set out to do things differently, through strategy, clarity, and design that drives action.
-                </p>
-                <p>
-                    From our base in Northern Ireland, we work with ambitious companies who see great design as an investment.  
-                    When you work with us, you're not hiring a vendor,  you're gaining a committed digital partner.
-                </p>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-left">
-                <div class="about-image rounded shadow-lg overflow-hidden">
-                    <img src="assets/images/sean-kuriyan-z0d5mXs-lI8-unsplash.jpg" alt="About Digital Horizon" class="img-fluid">
+    <!-- What Drives Us Section -->
+    <section class="section-padding bg-light-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <span class="section-badge-premium">Our Values</span>
+                    <h2 class="section-heading-premium">What Drives Us Every Day</h2>
+                    <p class="section-subheading-premium">These aren't just words on a wall - they're the principles that guide every decision we make</p>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- =========================================
-     HOW WE WORK Ã¢â‚¬â€ PREMIUM FEATURE CARDS
-========================================= -->
-<section class="section-padding bg-dark-premium text-white">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-lg-8 mx-auto text-center">
-                <span class="section-badge-premium light">OUR APPROACH</span>
-                <h2 class="section-heading-premium text-white">How We Work</h2>
-                <p class="section-subheading-premium text-white-50">
-                    Every project begins with listening, understanding your goals, audience, and vision.  
-                    From there, we craft bespoke solutions built on strategy and elevated by world-class design.
-                </p>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <!-- 1 -->
-            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
-                <div class="feature-card-premium">
-                    <div class="feature-icon-premium"><i class="fas fa-search"></i></div>
-                    <h4>Discovery</h4>
-                    <p>Deep-dive into your business and objectives.</p>
-                </div>
-            </div>
-
-            <!-- 2 -->
-            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="150">
-                <div class="feature-card-premium">
-                    <div class="feature-icon-premium"><i class="fas fa-map-signs"></i></div>
-                    <h4>Strategy</h4>
-                    <p>Define positioning, messaging & user journeys.</p>
-                </div>
-            </div>
-
-            <!-- 3 -->
-            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                <div class="feature-card-premium">
-                    <div class="feature-icon-premium"><i class="fas fa-pencil-ruler"></i></div>
-                    <h4>Design & Build</h4>
-                    <p>Create powerful, functional digital experiences.</p>
-                </div>
-            </div>
-
-            <!-- 4 -->
-            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="450">
-                <div class="feature-card-premium">
-                    <div class="feature-icon-premium"><i class="fas fa-rocket"></i></div>
-                    <h4>Launch & Grow</h4>
-                    <p>Deploy, measure and continuously improve performance.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- =========================================
-    WHAT DRIVES US Ã¢â‚¬â€ VALUES
-========================================= -->
-<section class="section-padding">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-lg-8 mx-auto text-center">
-                <span class="section-badge-premium">OUR VALUES</span>
-                <h2 class="section-heading-premium">What Drives Us</h2>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-lg-4" data-aos="fade-up">
-                <div class="service-card-premium">
-                    <div class="service-icon-premium"><i class="fas fa-handshake"></i></div>
-                    <h3>Partnership</h3>
-                    <p>We succeed when you succeed. Your goals become ours.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-card-premium">
-                    <div class="service-icon-premium"><i class="fas fa-lightbulb"></i></div>
-                    <h3>Clarity</h3>
-                    <p>Transparent communication & strategic direction.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-card-premium">
-                    <div class="service-icon-premium"><i class="fas fa-bullseye"></i></div>
-                    <h3>Impact</h3>
-                    <p>Design & decisions focused on driving measurable results.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- =========================================
-     MEET THE FOUNDER Ã¢â‚¬â€ PREMIUM CARD
-========================================= -->
-<section class="section-padding bg-light">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-lg-8 mx-auto text-center">
-                <span class="section-badge-premium">THE FOUNDER</span>
-                <h2 class="section-heading-premium">Meet the Founder</h2>
-                <p class="section-subheading-premium">Passionate about creating digital experiences that drive real business growth.</p>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-lg-6" data-aos="fade-up">
-                <div class="service-card-premium text-center">
-                    <div class="service-icon-premium founder-image-container">
-                        <img src="assets/images/jordangaw.jpeg" 
-                             alt="Jordan Gaw - Founder of Digital Horizon" 
-                             class="founder-profile-image">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Transparent & Honest</h4>
+                        <p>No hidden fees, no jargon, no surprises. We tell you exactly what we're doing, why we're doing it, and what it costs. You'll always know where you stand with us.</p>
                     </div>
-                    <h3>Jordan Gaw</h3>
-                    <p class="text-muted">Founder & Lead Designer</p>
-                    <p>
-                        With a focus on strategy-driven design and development,  
-                        Jordan helps businesses establish powerful digital presences that convert visitors into customers.
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Results-Focused</h4>
+                        <p>A beautiful website means nothing if it doesn't bring you customers. We obsess over conversions, enquiries, and real business growth - not just pretty designs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Partnership Mindset</h4>
+                        <p>We're not just contractors - we're invested in your success. When you win, we win. That's why we go beyond the brief to truly understand your business.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Local First</h4>
+                        <p>We champion Northern Ireland businesses. We understand local markets, local customers, and the unique challenges of doing business here.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Fast & Responsive</h4>
+                        <p>You'll never wait days for a reply. We respond quickly, meet deadlines, and respect your time because we know you've got a business to run.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Always Learning</h4>
+                        <p>Digital moves fast. We stay ahead of trends, test new strategies, and constantly improve so you always get cutting-edge solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Jordan Section -->
+   
+
+    <!-- How We Work -->
+    <section class="section-padding bg-dark-premium text-white">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <span class="section-badge-premium light">Our Approach</span>
+                    <h2 class="section-heading-premium text-white">Working With Us</h2>
+                    <p class="section-subheading-premium text-white-50">
+                        Here's what you can expect when you choose Digital Horizon
                     </p>
                 </div>
             </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-card-dark">
+                        <div class="process-number-dark">1</div>
+                        <h4>Real Conversation</h4>
+                        <p>No sales pitch. We have a genuine chat about your business, challenges, and goals. If we're not the right fit, we'll tell you.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-card-dark">
+                        <div class="process-number-dark">2</div>
+                        <h4>Clear Strategy</h4>
+                        <p>We dig into your audience, competitors, and market. Then we create a plan that positions you to win - no guesswork.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-card-dark">
+                        <div class="process-number-dark">3</div>
+                        <h4>Beautiful Build</h4>
+                        <p>We design and build your site with obsessive attention to detail. You'll see progress every step and have input throughout.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-card-dark">
+                        <div class="process-number-dark">4</div>
+                        <h4>Ongoing Support</h4>
+                        <p>Launch day isn't goodbye. We stick around to make sure everything works, train your team, and help you grow.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- =========================================
-     CALL TO ACTION
-========================================= -->
-<section class="cta-section-premium text-center">
-    <div class="container" data-aos="fade-up">
-        <h2 class="cta-heading-premium">Ready to Work Together?</h2>
-        <p class="cta-subheading-premium">Lets connect & discuss how we can help transform your digital presence.</p>
-
-        <div class="cta-buttons-premium">
-            <a href="contact.html" class="btn-premium btn-primary-premium">
-                Start a Conversation <i class="fas fa-arrow-right"></i>
-            </a>
+    <!-- Why Choose Us -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="section-badge-premium">The Difference</span>
+                    <h2 class="section-heading-premium">Why Local Businesses Choose Us</h2>
+                    <p class="lead">
+                        We're not trying to be everything to everyone. We focus on what we do best: helping local businesses dominate their market online.
+                    </p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="comparison-list">
+                        <div class="comparison-item">
+                            <div class="comparison-icon yes">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h5>Direct Access to the Founder</h5>
+                                <p>You work with Jordan directly - not juniors, not account managers</p>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon yes">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h5>Transparent, Fixed Pricing</h5>
+                                <p>No hidden costs or scope creep - you know exactly what you're paying</p>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon yes">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h5>Local Market Expertise</h5>
+                                <p>We understand Northern Ireland businesses and customers inside out</p>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon yes">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h5>Conversion-First Design</h5>
+                                <p>Every decision is driven by one question: will this get you more customers?</p>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-icon yes">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h5>Fast Response Times</h5>
+                                <p>Same-day responses, not "we'll get back to you next week"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer class="footer-premium">
+    <!-- CTA Section -->
+    <section class="cta-section-premium">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="zoom-in">
+                    <h2 class="cta-heading-premium">Let's Build Something Great Together</h2>
+                    <p class="cta-subheading-premium">Ready for a website that actually brings you business? Let's talk.</p>
+                    <div class="cta-buttons-premium">
+                        <a href="contact.html" class="btn-premium btn-primary-premium btn-lg">
+                            <span>Start a Conversation</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="work.html" class="btn-premium btn-outline-premium">
+                            <span>See Our Work</span>
+                            <i class="fas fa-briefcase"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
@@ -280,17 +408,11 @@
                         <h3>Digital Horizon</h3>
                         <p>Strategic web design and digital solutions for ambitious UK businesses.</p>
                         <div class="social-links-premium">
-                            <a href="https://www.facebook.com/digitalhorizonuk/" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/digital-horizon-uk/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
+                            <a href="https://www.facebook.com/digitalhorizonuk/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/company/digital-horizon-uk/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-
                     </div>
                 </div>
-                
                 <div class="col-lg-2 col-md-6">
                     <h5 class="footer-heading-premium">Company</h5>
                     <ul class="footer-links-premium">
@@ -301,43 +423,27 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading-premium">Services</h5>
                     <ul class="footer-links-premium">
-                        <li><a href="services.html">Website Design</a></li>
-                        <li><a href="services.html">E-Commerce</a></li>
-                        <li><a href="services.html">Booking Systems</a></li>
-                        <li><a href="services.html">SEO & Marketing</a></li>
-                        <li><a href="services.html">Brand Identity</a></li>
-                        <li><a href="services.html">Website Hosting</a></li>
+                        <li><a href="services-web-design.html">Website Design</a></li>
+                        <li><a href="services-local-lead-machine.html">Local Lead Machine</a></li>
+                        <li><a href="services-business-automation.html">Business Automation</a></li>
                     </ul>
                 </div>
-                
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading-premium">Get In Touch</h5>
                     <ul class="footer-contact-premium">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                           <a href="mailto:hello@digital-horizon.co.uk">hello@digital-horizon.co.uk</a>
-
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+447543129891">+44 7543 129891</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            Randalstown, Northern Ireland
-                        </li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:jordan.gaw@digital-horizon.co.uk">jordan.gaw@digital-horizon.co.uk</a></li>
+                        <li><i class="fas fa-phone"></i><a href="tel:+447543129891">+44 7543 129891</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i>Randalstown, Northern Ireland</li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom-premium">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; 2024 Digital Horizon Web Design. All rights reserved.</p>
+                        <p>&copy; 2026 Digital Horizon Web Design. All rights reserved.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
                         <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a>
@@ -347,50 +453,8 @@
         </div>
     </footer>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
-<script src="assets/js/main.js"></script>
-
-<style>
-/* Founder Image Styling - Simple Fix */
-.founder-image-container {
-    width: 150px !important;
-    height: 150px !important;
-    margin: 0 auto 1.5rem;
-    border-radius: 50%;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
-    padding: 0 !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.founder-profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .founder-image-container {
-        width: 120px !important;
-        height: 120px !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .founder-image-container {
-        width: 100px !important;
-        height: 100px !important;
-    }
-}
-</style>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
